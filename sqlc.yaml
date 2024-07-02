@@ -1,0 +1,22 @@
+version: "2"
+sql:
+  - name: "account"
+    engine: "mysql"
+    queries: "./query/account.sql"
+    schema: "./schema/account.sql"
+    gen:
+      go:
+        package: "account"
+        out: "db/account"
+    database:
+      managed: true
+  - name: "game"
+    engine: "mysql"
+    queries: "./query/game.sql"
+    schema: "./schema/game.sql"
+    gen:
+      go:
+        package: "game"
+        out: "db/game"
+    database:
+      managed: true
